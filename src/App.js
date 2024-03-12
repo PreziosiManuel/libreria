@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import MyNav from "./components/MyNav";
+import MyFooter from "./components/MyFooter";
+import MyAlert from "./components/MyAlert";
+import AllTheBooks from "./components/AllTheBooks";
+import { Container } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <MyNav subtitle="Home" />
+      <MyAlert />
+
+      <Container fluid className="my-2">
+        <Row className="justify-content-center gap-2">
+          <AllTheBooks />
+        </Row>
+      </Container>
+
+      <MyFooter />
+    </>
   );
 }
 
